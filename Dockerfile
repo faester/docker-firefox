@@ -118,6 +118,8 @@ ENV APP_NAME="Firefox"
 # Define mountable directories.
 VOLUME ["/config"]
 
+RUN echo "172.27.201.27 local.jyllands-posten.dk">> /etc/hosts
+
 # Metadata.
 LABEL \
       org.label-schema.name="firefox" \
@@ -125,3 +127,4 @@ LABEL \
       org.label-schema.version="$DOCKER_IMAGE_VERSION" \
       org.label-schema.vcs-url="https://github.com/jlesage/docker-firefox" \
       org.label-schema.schema-version="1.0"
+
